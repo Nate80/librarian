@@ -7,9 +7,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.launchcode.blogz.controllers.AbstractController;
-import org.launchcode.blogz.models.User;
-import org.launchcode.blogz.models.dao.UserDao;
+import org.launchcode.librarian.controllers.AbstractController;
+import org.launchcode.librarian.models.User;
+import org.launchcode.librarian.models.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
