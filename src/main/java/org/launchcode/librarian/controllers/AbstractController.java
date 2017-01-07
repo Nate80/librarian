@@ -18,7 +18,7 @@ public abstract class AbstractController {
 	protected entryDao entryDao;
 
 	//sets a universal key that can be used to determine whether a user is logged in
-	static final String userSessionKey = "user_id";
+	public static final String userSessionKey = "user_id";
 
 		//retrieves a user currently in session
 	    protected User getUserFromSession(HttpSession session) {  
