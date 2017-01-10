@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="template :: dochead">
+</head>
+<body>
+
+	<div th:replace="template :: navigation"></div>
+
+	
+	<h2><a th:text="${entry.title}"></a></h2>
+		<p><a th:text="${entry.body}"></a></p>
+		
+		<p><a th:text="'written by ' + ${entry.author.username} + ' on ' + ${#dates.format(entry.created, 'yy-MM-dd')} "></a></p>
+
+</body>
+</html>

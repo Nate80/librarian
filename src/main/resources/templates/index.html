@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="template :: dochead">
+</head>
+<body>
+
+	<div th:replace="template :: navigation"></div>
+
+	<h1>librarian users!</h1>
+	
+		<ul>
+			<li th:each="user : ${users}"> <a th:href=" '/librarian/' + ${user.username}" th:text="${user.username}"></a></li>
+		
+		</ul>
+
+	
+
+</body>
+</html>
