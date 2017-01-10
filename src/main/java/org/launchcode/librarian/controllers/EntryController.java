@@ -7,7 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.launchcode.librarian.models.Post;
+import org.launchcode.librarian.models.Entry;
 import org.launchcode.librarian.models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -2,7 +2,7 @@ package org.launchcode.librarian.controllers;
 
 import java.util.List;
 
-import org.launchcode.librarian.models.Post;
+import org.launchcode.librarian.models.Entry;
 import org.launchcode.librarian.models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +23,7 @@ public class LibrarianController extends AbstractController {
 	@RequestMapping(value = "/librarian")
 	public String librarianIndex(Model model) {
 		
-		//finds all library entires and passes them to the template
+		//finds all library entries and passes them to the template
 		Iterable<Entry> allEntries = entryDao.findAll();
 		model.addAttribute("entry", allEntries);		
 		return "librarian";

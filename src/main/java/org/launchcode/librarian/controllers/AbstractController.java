@@ -15,7 +15,7 @@ public abstract class AbstractController {
 	protected UserDao userDao;
 	
 	@Autowired
-	protected entryDao entryDao;
+	protected EntryDao entryDao;
 
 	//sets a universal key that can be used to determine whether a user is logged in
 	public static final String userSessionKey = "user_id";
