@@ -29,6 +29,7 @@ public class AuthenticationController extends AbstractController {
 		String password = request.getParameter("password");
 		String verify = request.getParameter("verify"); //uses verification from template "signup.html"
 		
+		//if passwords don't match, returns an error message
 		if(!password.equals(verify)){
 			model.addAttribute("verify_error", "The passwords do not match.");
 			model.addAttribute("username", username);
@@ -37,16 +38,19 @@ public class AuthenticationController extends AbstractController {
 		
 		else {
 			
+		//if user name does not follow parameters, returns an error message
 		if(!User.isValidUsername(username)){  
 			  model.addAttribute("username_error", "Invalid username.");
 			  model.addAttribute("username", username);
 			  return "signup";
 		  }
+		
+		  //if password doesn't fall within the prescribed parameters, returns an error message 
 		  else if(!User.isValidPassword(password)){  
 			  model.addAttribute("password_error","Invalid password.");
 			  model.addAttribute("username", username);
 			  return "signup";
-		  } else {  //if everything works as it should
+		  } else {  //if everything works as it should, it creates a new user
 		
 		User newUser = new User(username, password);
 		userDao.save(newUser);
@@ -56,6 +60,7 @@ public class AuthenticationController extends AbstractController {
 		}
 	}
 	}
+	//interacts with the login template
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginForm() {
 		return "login";
