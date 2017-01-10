@@ -23,7 +23,7 @@ public class LibrarianController extends AbstractController {
 	@RequestMapping(value = "/librarian")
 	public String librarianIndex(Model model) {
 		
-		// TODO - fetch posts and pass to template
+		//finds all library entires and passes them to the template
 		Iterable<Entry> allEntries = entryDao.findAll();
 		model.addAttribute("entry", allEntries);		
 		return "librarian";
