@@ -27,6 +27,8 @@ public class EntryController extends AbstractController {
 	public String newEntry(HttpServletRequest request, Model model) {
 		String body = request.getParameter("body");
 		String title = request.getParameter("title");
+		String genre = request.getParameter("genre");
+		String creator = request.getParameter("creator");
 		HttpSession thisSession = request.getSession();
 		User author = this.getUserFromSession(thisSession);
         
@@ -43,7 +45,7 @@ public class EntryController extends AbstractController {
 			return "newentry";
 		}
 		else{//if title and body != null & != ""
-			Entry newEntry = new Entry(title, body, author);
+			Entry newEntry = new Entry(title, body, title, title, author);
 			entryDao.save(newEntry);
 			int entryUid = newEntry.getUid();
 			return "redirect:" + newEntry.getAuthor().getUsername() + "/" + entryUid;		
