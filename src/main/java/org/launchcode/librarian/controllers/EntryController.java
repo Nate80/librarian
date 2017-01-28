@@ -35,13 +35,25 @@ public class EntryController extends AbstractController {
 		//if title of the entry is missing, then error message is displayed
 		if(title == "" || title == null){
 			model.addAttribute("error", "Title required.");
-			return "newpost";
+			return "newentry";
 		}
 		
 		//need to rename body, should this refer to author, or summarization of the work?
 		else if(body == "" || body == null){
 			model.addAttribute("error", "Content required.");
 			model.addAttribute("title", title);
+			return "newentry";
+		}
+		
+		else if(genre =="" || genre == null) {
+			model.addAttribute("error", "Genre required.");
+			model.addAttribute("genre", genre);
+			return "newentry";
+		}
+		
+		else if(creator == "" || creator == null) {
+			model.addAttribute("error", "Author required.");
+			model.addAttribute("creator", creator);
 			return "newentry";
 		}
 		else{//if title and body != null & != ""
