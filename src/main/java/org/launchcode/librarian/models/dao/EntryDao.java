@@ -18,5 +18,7 @@ public interface EntryDao extends CrudRepository<Entry, Integer> {
     // TODO - add method signatures as needed
     public Entry findByUid(int uid);
     public Entry findByTitle(String title);
+    public Entry findByGenre(String genre);
+    public Entry findByCreator(String creator);
 	
 }
