@@ -56,10 +56,20 @@ public class Entry extends AbstractEntity {
 		return genre;
 	}
 	
+	public void setGenre(String genre) {
+		this.genre = genre;
+		this.updated();
+	}
+	
 	@NotNull
 	@Column(name = "creator")
 	public String getCreator() {
 		return creator;
+	}
+	
+	public void setCreator(String creator) {
+		this.creator = creator;
+		this.updated();
 	}
 
 	@NotNull
