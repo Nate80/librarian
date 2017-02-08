@@ -90,7 +90,7 @@ public class User extends AbstractEntity {
         return entries;
     }
 	
-	public void setPosts(List<Entry> entries) {
+	public void setEntries(List<Entry> entries) {
 		this.entries = entries;
 	}
 	
