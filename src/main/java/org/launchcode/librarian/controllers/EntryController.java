@@ -57,7 +57,7 @@ public class EntryController extends AbstractController {
 			return "newentry";
 		}
 		else{//if title and body != null & != ""
-			Entry newEntry = new Entry(title, body, title, title, author);
+			Entry newEntry = new Entry(title, body, genre, creator, author);
 			entryDao.save(newEntry);
 			int entryUid = newEntry.getUid();
 			return "redirect:" + newEntry.getAuthor().getUsername() + "/" + entryUid;		
