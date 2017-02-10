@@ -25,7 +25,7 @@ public class LibrarianController extends AbstractController {
 		
 		//finds all library entries and passes them to the template
 		Iterable<Entry> allEntries = entryDao.findAll();
-		model.addAttribute("entry", allEntries);		
+		model.addAttribute("entries", allEntries);		
 		return "librarian";
 	}
 	
