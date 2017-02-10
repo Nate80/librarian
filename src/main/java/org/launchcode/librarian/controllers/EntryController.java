@@ -47,13 +47,16 @@ public class EntryController extends AbstractController {
 		
 		else if(genre =="" || genre == null) {
 			model.addAttribute("error", "Genre required.");
-			model.addAttribute("genre", genre);
+			model.addAttribute("title", title);
+			model.addAttribute("body", body);
 			return "newentry";
 		}
 		
 		else if(creator == "" || creator == null) {
 			model.addAttribute("error", "Author required.");
-			model.addAttribute("creator", creator);
+			model.addAttribute("title", title);
+			model.addAttribute("body", body);
+			model.addAttribute("genre", genre);
 			return "newentry";
 		}
 		else{//if title and body != null & != ""
