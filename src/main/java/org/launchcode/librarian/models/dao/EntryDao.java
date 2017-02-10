@@ -15,7 +15,7 @@ public interface EntryDao extends CrudRepository<Entry, Integer> {
     
     public List<Entry> findByAuthor(int authorId);
     
-    // TODO - add method signatures as needed
+    // allows you to search by various parameters
     public Entry findByUid(int uid);
     public Entry findByTitle(String title);
     public Entry findByGenre(String genre);
