@@ -11,7 +11,6 @@
 <div th:each="entry : ${entries}">
 
 	<h2><a th:href="'/librarian/' + ${entry.author.username} + '/' + ${entry.uid}" th:text="${entry.title}"></a></h2>
-	<p th:text="${entry.body}"></p>
 	<p th:text="${entry.genre}"></p>
 	<p th:text="${entry.creator}"></p>
 	<p class="entry-author">written by <a th:href="'/librarian/' + ${entry.author.username}" th:text="${entry.author.username}"></a></p>
