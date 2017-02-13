@@ -14,8 +14,8 @@ import javax.validation.constraints.NotNull;
 public class Entry extends AbstractEntity {
 
 	private String title;
-	private String genre;
 	private String creator;
+	private String genre;
 	private String body;
 	private User author;
 	private Date created;
@@ -23,13 +23,13 @@ public class Entry extends AbstractEntity {
 	
 	public Entry() {}
 	
-	public Entry(String title, String genre, String creator, String body, User author) {
+	public Entry(String title, String creator, String genre, String body, User author) {
 		
 		super();
 		
 		this.title = title;
-		this.genre = genre;
 		this.creator = creator;
+		this.genre = genre;
 		this.body = body;
 		this.author = author;
 		this.created = new Date();
@@ -51,6 +51,17 @@ public class Entry extends AbstractEntity {
 	}
 	
 	@NotNull
+	@Column(name = "creator")
+	public String getCreator() {
+		return creator;
+	}
+	
+	public void setCreator(String creator) {
+		this.creator = creator;
+		this.updated();
+	}
+	
+	@NotNull
 	@Column(name = "genre")
 	public String getGenre() {
 		return genre;
@@ -61,17 +72,6 @@ public class Entry extends AbstractEntity {
 		this.updated();
 	}
 	
-	@NotNull
-	@Column(name = "creator")
-	public String getCreator() {
-		return creator;
-	}
-	
-	public void setCreator(String creator) {
-		this.creator = creator;
-		this.updated();
-	}
-
 	@NotNull
     @Column(name = "body")
 	public String getBody() {
