@@ -40,23 +40,23 @@ public class EntryController extends AbstractController {
 		
 		else if(creator == "" || creator == null) {
 			model.addAttribute("error", "Author required.");
-			//model.addAttribute("title", title);
-			//model.addAttribute("body", body);
-			//model.addAttribute("genre", genre);
+			model.addAttribute("title", title);
 			return "newentry";
 		}
 		
 		else if(genre =="" || genre == null) {
 			model.addAttribute("error", "Genre required.");
-			//model.addAttribute("title", title);
-			//model.addAttribute("body", body);
+			model.addAttribute("title", title);
+			model.addAttribute("creator", creator);
 			return "newentry";
 		}
 		
 		//need to rename body, should this refer to author, or summarization of the work?
 		else if(body == "" || body == null){
 			model.addAttribute("error", "Content required.");
-			//model.addAttribute("title", title);
+			model.addAttribute("title", title);
+			model.addAttribute("creator", creator);
+			model.addAttribute("genre", genre);
 			return "newentry";
 		}
 		
