@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="template :: dochead">
+</head>
+<body>
+
+	<div th:replace="template :: navigation"></div>
+
+	<form method = "post">
+	<h2><a th:text="${entry.title}"></a></h2>
+		<b><p><a th:text="'Author: ' + ${entry.creator}"></a></p></b>
+		<b><p><a th:text=" 'Genre: ' + ${entry.genre}"></a></p></b>
+		<p><a th:text="${entry.body}"></a></p>
+			
+		<i><p><a th:text="'entered by ' + ${entry.author.username} + ' on ' + ${#dates.format(entry.created, 'yy-MM-dd')} "></a></p></i>
+	<button type="submit">delete</button>
+	<h2>Entry Deleted!</h2>
+	</form>
+</body>
+</html>
