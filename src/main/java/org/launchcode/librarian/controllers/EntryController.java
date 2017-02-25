@@ -82,5 +82,12 @@ public class EntryController extends AbstractController {
 		model.addAttribute("entries", userEntries);
 		return "librarian";
 	}
-}
+	
+	@RequestMapping(value="/deleteentry/{username}/{uid}", method = RequestMethod.GET)
+	public String delete(@PathVariable int uid){
+		entryDao.delete(uid);
+		return "redirect:/librarian";
+	}
+		
 
+}
